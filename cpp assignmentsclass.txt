@@ -1,0 +1,28 @@
+                    Class&objects
+
+1) C++ Program to find Factorial of a number using class */
+
+2)C++ program to find Reverse of a Number using class  */
+
+3)Write a C++ program to create a class Worker with data members as Worker_Name, 
+No_of_Hours_worked, Pay_Rate. Write necessary member functions to calculate and 
+display the salary of worker. (Use default value for Pay_Rate)
+
+4)Write a C++ program to create a class Employee which
+  contains data members as Emp_Id, Emp_Name, Basic_Salary, HRA, DA, Gross_Salary.
+  Write member functions to accept Employee information. Calculate and display
+  Gross salary of an employee. (DA=12% of Basic salary and HRA = 30% of Basic
+  salary) (Use appropriate manipulators to display employee information in
+  given format :- Emp_Id and Emp_Name should be left justified and Basic_Salary,
+  HRA, DA, Gross salary Right justified with a precision of two digits)
+
+5) Write a C++ program to create a class Student which contains data members as Roll_Number, 
+Stud_Name, Percentage.  Write member functions to accept Student information. 
+ Display all details of student along with a class obtained depending on percentage. 
+(Use array of objects)   
+======================================================================
+             
+
+
+
+ 
