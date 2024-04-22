@@ -29,21 +29,6 @@
 जय केतन जय जय केतन 
 जय हय प्रापुल जयमिड दापुदने
 
-
-//namespace FactoryMethod
-//{
-//    internal class Program
-//    {
-//        static void Main(string[] args)
-//        {
-//            Console.WriteLine("Hi i am Rushikesh ");
-//            Console.ReadKey();
-//        }
-//    }
-
-//}
-
-
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,7 +55,7 @@ namespace Project1
             String ch;
             do
             {
-                Console.WriteLine("Enter choice: 1.Deposit  2.Withdraw 3.total_amount 4.last 5 transition  5.Exit");
+                Console.Write("Enter choice: 1.Deposit  2.Withdraw 3.total_amount 4.(last 5 transition)  5.Exit :");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -87,37 +72,39 @@ namespace Project1
                                 int nn = 0;
                                 int no=0;
                               do
-                                {
+                                { 
                                     nn++;
-                                    for (int k = 0; k < nn-1; k++)
+                                    for (int k = 0; k < nn; k++)
                                     {
                                         Console.Write($"\nDeposite Amount :: {i + 1}: ");
-                                        deposit[i] = Convert.ToInt32(Console.ReadLine());
-
-                                        Console.Write($"\nYou want to continue Deposite your amount again :: {i + 1}: 1.Yes or 2.No : ");
+                                        deposit[k] = Convert.ToInt32(Console.ReadLine());
+                                        total_amount += deposit[k];
+                                        Console.Write($"\nYou want to continue Deposite your amount again :: {k + 1}: 1.Yes or 2.No : ");
                                         no = Convert.ToInt32(Console.ReadLine()); 
                                     }
-                                 } while (no != 2);
 
-                                total_amount +=  deposit[i];
+                                 } while (no != 2);
+                               
+                            
+
                             }
                         }
 
-                             Console.WriteLine("\nTotal amount after deposit:" + total_amount);
+                            // Console.WriteLine("\nTotal amount after deposit:" + total_amount);
                             Console.WriteLine();
                             break;
                        
                     case 2:
                         {
-                            Console.WriteLine("\t\t*********Welcome to the Withdraw procedure ::********* \n");
-
-                        Console.WriteLine("\nEnter the Amount you want to withdraw : ");
-                        int noo = Convert.ToInt32(Console.ReadLine());
+                            Console.WriteLine("\n\n\t\t*********Welcome to the Withdraw procedure ::********* \n");
+                            Console.WriteLine("\n\nAvailable Balance ::" + total_amount);
+                            Console.WriteLine("\nEnter the Amount you want to withdraw : ");
+                            int noo = Convert.ToInt32(Console.ReadLine());
                         if (noo > total_amount)
                         {
                             Console.WriteLine("\nNot suffisent balance on your Account....!\n");
                         }
-                        else
+                        
                         {
                                 Console.WriteLine("\nSuffisent balance on your Account Withdraw procedure Start....!\n");
                                 Console.WriteLine("Enter the Nominee  Name  ");
@@ -132,9 +119,9 @@ namespace Project1
                                     do
                                     {
                                         nn++;
-                                        for (int k = 0; k < nn-1; k++)
+                                        for (int k = 0; k < nn; k++)
                                         {
-                                            Console.Write($"Withdraw ::  {k + 1}: ");
+                                            Console.Write($"Withdraw Amount::  {k + 1}: ");
                                             withdraw[k] = Convert.ToInt32(Console.ReadLine());
                                             temp = withdraw[k];
 
@@ -148,7 +135,7 @@ namespace Project1
                                 }
 
                         }
-                        Console.WriteLine("\nTotal amount after WithdraW:" + total_amount);
+                        //Console.WriteLine("\nTotal amount after WithdraW:" + total_amount);
                        Console.WriteLine("\t\t\n****************Thank you for visiting****************\n");
                         }
                         break;
@@ -163,7 +150,7 @@ namespace Project1
                             if(sum==1)
                             {
                                 Console.WriteLine("\nweDisplay Deposite Data::");
-                                for (int i = 0; i < n; i++)
+                                for (int i = 0; i <=n; i++)
                                 {
                                     Console.WriteLine($"Nominee  Name:: {i + 1}: {depositName[i]}");
                                     Console.WriteLine($"deposit Amount:: {i + 1}: {deposit[i]}");
@@ -176,7 +163,7 @@ namespace Project1
                             else 
                             {
                                 Console.WriteLine("Display  Withdraw Data::");
-                                for (int i = 0; i < n; i++)
+                                for (int i = 0; i <=n; i++)
                                 {
                                     Console.WriteLine($"Nominee  Name:: {i + 1}: {withdrawName[i]}");
                                     Console.WriteLine($"Withdraw Amount:: {i + 1}: {withdraw[i]}");
