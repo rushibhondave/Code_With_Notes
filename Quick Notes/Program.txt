@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 echo "# rushibhondavetgtg" >> README.md
 git init
 git add README.md
@@ -8,6 +9,273 @@ git push -u origin main
 
 
 
+=======
+
+
+रघु नन्दन रघु रघु नन्दन 
+रघु वर सेवन रघुपति छायना
+शत योजन शत शत योजन
+शर धि नियोजन शर परि लंघन
+
+रघु नन्दन रघु रघुbनन्दन 
+रघु वर सेवन रघुपति छायन
+शत योजन शत शत योजन
+शर धि नियोजन शर परि लंघनमे
+
+हरि भाजन हरि हरि भाजन
+हरि मद भाजन दशमुख कंपन 
+बड़ बाकृत बड़ बड़ बाकृत 
+बड़ बाल कृत बहु भस्मा चन
+जय केतन जय जय केतन 
+जय हय प्रापुल जयमिड दापुदने
+
+रघु नन्दन रघु रघु नन्दन 
+रघु वर सेवन रघुपति छायना
+शत योजन शत शत योजन
+शर धि नियोजन शर परि लंघन
+
+हरि भाजन हरि हरि भाजन
+हरि मद भाजन दशमुख कंपन 
+बड़ बाकृत बड़ बड़ बाकृत 
+बड़ बाल कृत बहु भस्मा चन
+जय केतन जय जय केतन 
+जय हय प्रापुल जयमिड दापुदने
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+using static System.Runtime.InteropServices.JavaScript.JSType;
+
+namespace _Interface_Silver_Gold
+{
+    public class program
+    {
+        static void Main(string[] args)
+        {
+            string Op;
+            do
+            {
+                Console.WriteLine("Enter your preminum: ");
+                Console.WriteLine("1.Silver 2.Gold 3.Platinum");
+                int choice = Convert.ToInt32(Console.ReadLine());
+                PremiumFactory pf = new PremiumFactory();
+                switch (choice)
+                {
+                    case 1:
+                        ISilver silver = pf.getData(choice);
+                        Console.WriteLine("Enter preminum: ");
+                        Console.WriteLine("1.Water");
+                        int ch = Convert.ToInt32(Console.ReadLine());
+                        if (ch == 1)
+                            silver.water();
+                        else
+                            Console.WriteLine("Aukat se bahar");
+                        break;
+                    case 2:
+                        IGold gold = (IGold)pf.getData(choice);
+                        Console.WriteLine("Enter preminum: ");
+                        Console.WriteLine("1.Water 2.Tea");
+                        int ch1 = Convert.ToInt32(Console.ReadLine());
+                        if (ch1 == 1)
+                            gold.water();
+                        else if (ch1 == 2)
+                            gold.Tea();
+                        else
+                            Console.WriteLine("Aukat se bahar");
+                        break;
+                    case 3:
+                        IPlatinum platinum = (IPlatinum)pf.getData(choice);
+                        Console.WriteLine("Enter preminum: ");
+                        Console.WriteLine("1.Water 2.Tea 3.Coffee");
+                        int ch2 = Convert.ToInt32(Console.ReadLine());
+                        if (ch2 == 1)
+                            platinum.water();
+                        else if (ch2 == 2)
+                            platinum.Tea();
+                        else if (ch2 == 3)
+                            platinum.Coffee();
+                        else
+                            Console.WriteLine("Aukat se bahar");
+                        break;
+                }
+                Console.WriteLine("Do you want to continue?n/y");
+                Op = Console.ReadLine();
+            } while (Op == "y");
+        }
+    }
+
+
+
+    public class PremiumFactory
+    {
+        public ISilver getData(int pf)
+        {
+            if (pf == 1)
+                return new customer1();
+            else if (pf == 2)
+                return new customer2();
+            else if (pf == 3)
+                return new customer3();
+            else
+                return null;
+
+        }
+    }
+    public interface ISilver
+    {
+        public void water();
+    }
+    public interface IGold
+    {
+        public void water();
+        public void Tea();
+    }
+    public interface IPlatinum
+    {
+        public void water();
+        public void Tea();
+        public void Coffee();
+    }
+
+    public class customer1 : ISilver
+    {
+        public void water()
+        {
+            Console.WriteLine("I drink Water");
+        }
+    }
+
+    public class customer2 : ISilver, IGold
+    {
+        public void water()
+        {
+            Console.WriteLine("I drink Water");
+        }
+        public void Tea()
+        {
+            Console.WriteLine("I drink Tea");
+        }
+    }
+
+    public class customer3 : IPlatinum, ISilver, IGold
+    {
+        public void water()
+        {
+            Console.WriteLine("I drink Water");
+        }
+        public void Tea()
+        {
+            Console.WriteLine("I drink Tea");
+        }
+        public void Coffee()
+        {
+            Console.WriteLine("I drink Coffee");
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+namespace Bank
+{
+    public class bank_info
+    {
+
+        public void bank_info1()
+        {
+            Console.WriteLine("Enter the Customer Count you want to store");
+            int NUM_Customer = Convert.ToInt32(Console.ReadLine());
+            const int DATA_SIZE = 4; //  Name,Age,Account_type,Deposite,
+
+            string[,] players = new string[NUM_Customer, DATA_SIZE];
+
+
+            for (int i = 0; i < NUM_Customer; ++i)
+            {
+                Console.WriteLine($"\n\t\t************  Enter details for Customer {i + 1} : ************");
+                for (int j = 0; j < DATA_SIZE; ++j)
+                {
+                    switch (j)
+                    {
+                        case 0:
+                            Console.Write("Name: ");
+                            break;
+                        case 1:
+                            Console.Write("Age: ");
+                            break;
+                        case 2:
+                            Console.Write("Account Type: ");
+                            break;
+                        case 3:
+                            Console.Write("Deposite: ");
+                            break;
+                    }
+                    players[i, j] = Console.ReadLine();
+                }
+            }
+
+
+           
+            for (int i = 0; i < NUM_Customer; ++i)
+            {
+                Console.WriteLine($"\n\t\t************  Customer details for Customer {i + 1} : ************");
+                Console.WriteLine($"Customer {i + 1}:");
+                for (int j = 0; j < DATA_SIZE; ++j)
+                {
+                    switch (j)
+                    {
+                        case 0:
+                            Console.Write("Name: ");
+                            break;
+                        case 1:
+                            Console.Write("Age: ");
+                            break;
+                        case 2:
+                            Console.Write("Account Type: ");
+                            break;
+                        case 3:
+                            Console.Write("Deposite: ");
+                            break;
+                    }
+                    Console.WriteLine(players[i, j]);
+                }
+                Console.WriteLine();
+            }
+
+        }
+    }
+}
+
+
+
+
+
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Intrinsics.X86;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+
+>>>>>>> d44f6dba6694587f205aa65f267a6410979574ac
 //#include <iostream>
 #include<bits/stdc++.h>
 #include<string>
